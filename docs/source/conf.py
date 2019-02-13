@@ -19,14 +19,16 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'starfish-api'
+project = 'DEX'
 copyright = '2019, DEX'
 author = 'DEX'
 
 # The short X.Y version
-version = ''
+# version = ''
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
+release_parts = release.split('.')  # a list
+version = release_parts[0] + '.' + release_parts[1] + '.' + release_parts[2]
 
 
 # -- General configuration ---------------------------------------------------
@@ -77,7 +79,8 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -104,7 +107,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'starfish-apidoc'
+htmlhelp_basename = 'DEXdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -131,7 +134,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'starfish-api.tex', 'starfish-api Documentation',
+    (master_doc, 'DEX.tex', 'DEX Documentation',
      'DEX', 'manual'),
 ]
 
@@ -141,7 +144,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'starfish-api', 'starfish-api Documentation',
+    (master_doc, 'DEX', 'DEX Documentation',
      [author], 1)
 ]
 
@@ -152,8 +155,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'starfish-api', 'starfish-api Documentation',
-     author, 'starfish-api', 'One line description of project.',
+    (master_doc, 'DEX', 'DEX Documentation',
+     author, 'DEX', 'One line description of project.',
      'Miscellaneous'),
 ]
 
@@ -181,7 +184,10 @@ epub_exclude_files = ['search.html']
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3', None),
+    'starfish_py': ('http://shrimp.octet.services/starfish/starfish-py/latest/', None)
+}
 
 # -- Options for todo extension ----------------------------------------------
 

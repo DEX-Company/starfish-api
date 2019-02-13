@@ -1,3 +1,7 @@
+.. image:: _static/collab-dex-logo.svg
+    :align: right
+    :alt: Dex.sg
+    :target: https://dex.sg
 
 DEX documentation
 =================
@@ -6,4 +10,4 @@ DEX documentation
    :maxdepth: 2
    :caption: Contents:
 
-   Starfish API <starfish/index>
+   starfish/index
