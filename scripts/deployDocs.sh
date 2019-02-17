@@ -2,7 +2,7 @@
 
 # package docs and deploy
 
-DOC_PATH='./doc/'
+DOC_PATH='./docs/build/html'
 # FIXME get version from npm
 VERSION="0.0.1"
 # FIXME get project name from npm
@@ -30,10 +30,10 @@ fi
 echo "building docs package $PACKAGE_NAME"
 
 # make the docs from source
-cd docs && make html
+(cd docs && make html)
 
 # package into a tar.gz file for deployment
-(cd "$DOC_PATH"; tar -czvf "../$DEPLOY_FILENAME" ./)
+(cd "$DOC_PATH"; tar -czvf "../../../$DEPLOY_FILENAME" ./)
 
 if [ ! -z "$DEPLOY_SERVER" ]; then
     DEPLOY_BUILD_URL="http://${DEPLOY_SERVER}/docs_build"
