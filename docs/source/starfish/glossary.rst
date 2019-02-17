@@ -2,4 +2,4 @@ Starfish Glossary
 =================
 
 
-ABC 123
+ABC

@@ -25,8 +25,8 @@ For each language binding (starting with Python) there is detailed API documenta
    :maxdepth: 2
    :caption: Contents:
 
+   design
    glossary
-
 
 .. _glossary: glossary.html
 .. _starfish-py branches under development: starfish-py/
