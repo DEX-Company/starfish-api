@@ -1,6 +1,106 @@
 Starfish Design
 ===============
 
+Actors (Identity?)
+------------------
+
+.. uml::
+
+   abstract class Actor {
+     DID actorId
+   }
+
+   class Publisher
+   class Consumer
+   class AgentOperator
+
+   Actor <|-- Publisher
+   Actor <|-- Consumer
+   Actor <|-- AgentOperator
+
+   class Group {
+     Actor[] actors
+   }
+
+Assets
+------
+
+.. uml::
+
+   class Asset {
+     DID assetID
+     Metadata metadata
+     getDID()
+     getMetadata()
+     setAssetMetadata(metadata)
+     getSize()
+     getBytes()
+     getProvenance()
+   }
+
+   class AssetData
+   class MemoryAsset
+   class AssetBundle {
+     Asset[] assets
+   }
+
+   Asset <|-- AssetData
+   Asset <|-- AssetBundle
+   AssetData <|-- MemoryAsset
+
+Agents
+------
+
+.. uml::
+
+   class Agent {
+     DID agentId
+     DDO agentDDO
+     getDID()
+     getDDO()
+     register(metadata, account)
+     registerAsset()
+     getAsset()
+   }
+
+   class StorageAgent
+   class MemoryAgent
+   class MetadataAgent
+   class ListingAgent
+   class AgreementAgent
+   class TrustAgent
+   class InvokeAgent
+   class IndexAgent
+
+   Agent <|-- StorageAgent
+   StorageAgent <|-- MemoryAgent
+   Agent <|-- MetadataAgent
+   Agent <|-- ListingAgent
+   Agent <|-- AgreementAgent
+   Agent <|-- TrustAgent
+   Agent <|-- InvokeAgent
+   Agent <|-- IndexAgent
+
+Listings
+--------
+
+.. uml::
+
+   class Metadata
+
+   class AgreementTemplate
+
+   class Agreement
+
+   class Listing {
+     DID listingId
+     Template template
+     Asset asset
+     getDID()
+     getTemplate()
+     getAsset()
+   }
+
 
 PlantUML example
 ----------------
@@ -49,3 +149,20 @@ Graphviz example
      struct1:f1 -> struct2:f0;
      struct1:f2 -> struct3:here;
    }
+
+Ditaa example
+-------------
+
+.. uml::
+
+   @startditaa
+   +--------+   +-------+    +-------+
+   |        +---+ ditaa +--> |       |
+   |  Text  |   +-------+    |diagram|
+   |Document|   |!magic!|    |       |
+   |     {d}|   |       |    |       |
+   +---+----+   +-------+    +-------+
+           :                         ^
+           |       Lots of work      |
+           +-------------------------+
+   @endditaa
