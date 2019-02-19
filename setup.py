@@ -10,8 +10,9 @@ from os.path import join
 with open('README.md') as readme_file:
     readme = readme_file.read()
 
-with open('CHANGELOG.md') as changelog_file:
-    changelog = changelog_file.read()
+# with open('CHANGELOG.md') as changelog_file:
+#     changelog = changelog_file.read()
+changelog = 'Initial commit'
 
 install_requirements = [
     'coloredlogs',
@@ -48,11 +49,9 @@ docs_requirements = [
 ]
 
 packages = []
-
-# no source!
-# for d, _, _ in os.walk('starfish'):
-#     if os.path.exists(join(d, '__init__.py')):
-#         packages.append(d.replace(os.path.sep, '.'))
+for d, _, _ in os.walk('starfish_api'):
+    if os.path.exists(join(d, '__init__.py')):
+        packages.append(d.replace(os.path.sep, '.'))
 
 setup(
     author="dex-company",
@@ -62,7 +61,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     description="Starfish API documentation",
     extras_require={
