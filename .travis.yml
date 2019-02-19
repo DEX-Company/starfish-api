@@ -2,9 +2,11 @@ language: python
 python:
 - '3.7'
 dist: xenial
-sudo: false
+sudo: true
 addons:
   ssh_known_hosts: shrimp.octet.services
+before_install:
+- sudo apt-get install plantuml graphviz
 install: pip install -U tox-travis
 script: tox
 deploy:
