@@ -32,10 +32,24 @@ echo "building docs package $PACKAGE_NAME"
 # ensure we are in the venv
 if [ ! -d venv ]; then
     echo "creating the virtualenv"
-    virtualvenv -p /usr/bin/python3.7 venv
+    python3.7 -m venv venv
 fi
 source venv/bin/activate
 pip install -r requirements_dev.txt
+
+# ensure we have PlantUML
+plantuml_path="$(which plantuml)"
+if [ -z "$plantuml_path" ]; then
+    echo "plantuml not found"
+    exit 1
+fi
+
+# ensure we have graphviz
+dot_path="$(which dot)"
+if [ -z "$dot_path" ]; then
+    echo "graphviz not found"
+    exit 1
+fi
 
 # make the docs from source
 make docs
