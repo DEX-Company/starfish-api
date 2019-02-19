@@ -5,7 +5,8 @@ dist: xenial
 sudo: false
 addons:
   ssh_known_hosts: shrimp.octet.services
-script: cal
+install: pip install -U tox-travis
+script: tox
 deploy:
 - provider: script
   skip_cleanup: true

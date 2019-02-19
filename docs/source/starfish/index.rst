@@ -32,5 +32,5 @@ For each language binding (starting with Python) there is detailed API documenta
 .. _starfish-py branches under development: starfish-py/
 .. _starfish-js: starfish-js/latest/classes/_ocean_.ocean.html
 .. _starfish-js branches under development: starfish-js/
-.. _starfish-java: starfish-java/latest/
+.. _starfish-java: starfish-java/latest/apidocs/
 .. _starfish-java branches under development: starfish-java/
