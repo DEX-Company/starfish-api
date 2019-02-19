@@ -5,13 +5,45 @@ You need to install `graphviz`
 
 To re-build the documentation
 
-1. Download a version of plantuml.jar, and place it in the `docs` folder
+1. Install PlantUML
 
+On Linux systems
 ```bash
-wget http://sourceforge.net/projects/plantuml/files/plantuml.1.2019.1.jar/download -O docs/plantuml.jar
+sudo apt-get-install plantuml
 ```
 
-2. Make the docs
+On Mac
+```bash
+brew install plantuml
+```
+
+Or by hand
+```bash
+mkdir -p $HOME/bin
+export PATH=$HOME/bin:$PATH
+cat <<EOF > $HOME/bin/plantuml
+#!/bin/sh
+# plantuml
+
+dir="$(dirname $0)"
+jar="$dir/plantuml.jar"
+
+if [ ! -e "$jar" ]; then
+    echo "cannot find PlantUML jar: $jar"
+    exit 1
+fi
+
+java -jar "$jar" $@
+
+EOF
+chmod +x $HOME/bin/plantuml
+curl -L http://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o $HOME/bin/plantuml.jar
+```
+2. Install Graphviz
+
+http://graphviz.org/download/
+
+3. Make the docs
 ```bash
 virtualvenv venv
 # or for a specific version of python
