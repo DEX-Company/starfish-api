@@ -31,12 +31,14 @@ echo "building docs package $PACKAGE_NAME"
 
 # ensure we are in the venv
 if [ ! -d venv ]; then
-    python -m venv venv
+    echo "creating the virtualenv"
+    virtualvenv -p /usr/bin/python3.7 venv
 fi
 source venv/bin/activate
+pip install -r requirements_dev.txt
 
 # make the docs from source
-(cd docs && make html)
+make docs
 
 # package into a tar.gz file for deployment
 (cd "$DOC_PATH"; tar -czf "../../../$DEPLOY_FILENAME" ./)
