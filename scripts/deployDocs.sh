@@ -29,6 +29,12 @@ fi
 
 echo "building docs package $PACKAGE_NAME"
 
+# ensure we are in the venv
+if [ ! -d venv ]; then
+    python -m venv venv
+fi
+source venv/bin/activate
+
 # make the docs from source
 (cd docs && make html)
 
