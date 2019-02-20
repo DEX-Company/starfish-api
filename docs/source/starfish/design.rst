@@ -399,7 +399,7 @@ Helpers
 +---------------------+-------------------+-------------------+
 
 .. _Hash_java: starfish-java/latest/apidocs/sg/dex/starfish/crypto/Hash.html
-.. _Hex_java: starfish-java/latest/apidocs/sg/dex/starfish/crypto/Hex.html
+.. _Hex_java: starfish-java/latest/apidocs/sg/dex/starfish/util/Hex.html
 .. _Utils_java: starfish-java/latest/apidocs/sg/dex/starfish/Utils.html
 .. _TODOException_java: starfish-java/latest/apidocs/sg/dex/starfish/TODOException.html
 
@@ -409,7 +409,7 @@ Helpers
 .. _TODOException_py: starfish-py/latest/
 
 .. _Hash_js: starfish-js/latest/
-.. _Hex_js: starfish-js/latest/
+.. _Hex_js: starfish-js/latest/classes/_sg_dex_starfish_hex_.hex.html
 .. _Utils_js: starfish-js/latest/
 .. _TODOException_js: starfish-js/latest/
 
