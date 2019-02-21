@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 # package docs and deploy
 
@@ -75,7 +74,7 @@ if [ ! -z "$DEPLOY_SERVER" ]; then
         mkdir -p "target/$PROJECT_NAME/branches/$DEV_BRANCH"
         mv "$DEPLOY_FILENAME" "target/$PROJECT_NAME/branches/$DEV_BRANCH/"
         env > "target/$PROJECT_NAME/branches/$DEV_BRANCH/env.txt"
-        rsync -auvW --rsh 'ssh -i /tmp/dex-docs-deploy' target/ ${DEPLOY_USER}@${DEPLOY_SERVER}:./
+        rsync -auW --rsh 'ssh -i /tmp/dex-docs-deploy' target/ ${DEPLOY_USER}@${DEPLOY_SERVER}:./
     fi
 
     rm /tmp/dex-docs-deploy
