@@ -7,15 +7,15 @@ A glossary_ of terms is provided.
 
 For each language binding (starting with Python) there is detailed API documentation.
 
-* :doc:`starfish-py <starfish_py:getting_started>`.
+* starfish-py_
 
   - See also `starfish-py branches under development`_.
 
-* `starfish-js`_
+* starfish-js_
 
   - See also `starfish-js branches under development`_.
 
-* `starfish-java`_
+* starfish-java_
 
   - See also `starfish-java branches under development`_.
 
@@ -29,8 +29,9 @@ For each language binding (starting with Python) there is detailed API documenta
    glossary
 
 .. _glossary: glossary.html
-.. _starfish-py branches under development: starfish-py/
+.. _starfish-py: starfish-py/latest/getting_started.html
+.. _`starfish-py branches under development`: starfish-py/
 .. _starfish-js: starfish-js/latest/classes/_ocean_.ocean.html
-.. _starfish-js branches under development: starfish-js/
+.. _`starfish-js branches under development`: starfish-js/
 .. _starfish-java: starfish-java/latest/apidocs/
-.. _starfish-java branches under development: starfish-java/
+.. _`starfish-java branches under development`: starfish-java/
